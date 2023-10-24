@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <title>Checkout</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/imgs/theme/favicon.svg">
+  <!-- Template CSS -->
+  <link rel="stylesheet" th:href="@{/css/main.css?v=3.4}">
+</head>
+<body>
+<header th:replace="~{fragment::maintop}" ></header>
+
+<div th:replace="~{fragment::mobiletop}"></div>
+
+
+<section class="hero-2 bg-green">
+  <div class="hero-content">
+    <div class="container">
+      <div class="text-center">
+        <h4 class="text-brand mb-20">Get in touch</h4>
+        <h1 class="mb-20 wow fadeIn animated font-xxl fw-900">
+          Let's Talk About <br>Your <span class="text-style-1">Idea</span>
+        </h1>
+        <p class="w-50 m-auto mb-50 wow fadeIn animated">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quam eius placeat, a quidem mollitia at accusantium reprehenderit pariatur provident nam ratione incidunt magnam sequi.</p>
+        <p class="wow fadeIn animated">
+          <a class="btn btn-brand btn-lg font-weight-bold text-white border-radius-5 btn-shadow-brand hover-up" href="page-about.html">About Us</a>
+          <a class="btn btn-outline btn-lg btn-brand-outline font-weight-bold text-brand bg-white text-hover-white ml-15 border-radius-5 btn-shadow-brand hover-up">Support Center</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-border pt-50 pb-50">
+  <div class="container">
+    <div id='map-panes' class="leaflet-map mb-50"></div>
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4 class="mb-15 text-brand">Office</h4>
+        205 South Michigan Avenue, Suite 810<br>
+        Chicago, 60601, USA<br>
+        <abbr title="Phone">Phone:</abbr> (+91) 9567712357<br>
+        <abbr title="Email">Email: </abbr>contact@kidsart.com<br>
+        <a class="btn btn-outline btn-sm btn-brand-outline font-weight-bold text-brand bg-white text-hover-white mt-20 border-radius-5 btn-shadow-brand hover-up"><i class="fi-rs-marker mr-10"></i>View map</a>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4 class="mb-15 text-brand">Studio</h4>
+        205 South Michigan Avenue, Suite 810<br>
+        Chicago, 60601, USA<br>
+        <abbr title="Phone">Phone:</abbr> (+91) 9567712357<br>
+        <abbr title="Email">Email: </abbr>contact@kidsart.com<br>
+        <a class="btn btn-outline btn-sm btn-brand-outline font-weight-bold text-brand bg-white text-hover-white mt-20 border-radius-5 btn-shadow-brand hover-up"><i class="fi-rs-marker mr-10"></i>View map</a>
+      </div>
+      <div class="col-md-4">
+        <h4 class="mb-15 text-brand">Shop</h4>
+        205 North Michigan Avenue, Suite 810<br>
+        Chicago, 60601, USA<br>
+        <abbr title="Phone">Phone:</abbr> (+91) 9567712355<br>
+        <abbr title="Email">Email: </abbr>contact@kidsart.com<br>
+        <a class="btn btn-outline btn-sm btn-brand-outline font-weight-bold text-brand bg-white text-hover-white mt-20 border-radius-5 btn-shadow-brand hover-up"> <i class="fi-rs-marker mr-10"></i> View map</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer th:replace="~{fragment::downbar}">
+
+</footer>
+
+
+<div th:replace = "~{fragment::script}"></div>
+</body>
+</html>

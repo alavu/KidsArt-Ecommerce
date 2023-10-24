@@ -1,0 +1,657 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragment::head}"></head>
+<body>
+<!-- Quick view -->
+<div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="detail-gallery">
+                            <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+                            <!-- MAIN SLIDES -->
+                            <div class="product-image-slider">
+                                <figure class="border-radius-10">
+                                    <img th:src="@{/imgs/shop/product-16-2.jpg}" alt="product image">
+                                </figure>
+                                <figure class="border-radius-10">
+                                    <img th:src="@{/imgs/shop/product-16-1.jpg}" alt="product image">
+                                </figure>
+                                <figure class="border-radius-10">
+                                    <img th:src="@{/imgs/shop/product-16-3.jpg}" alt="product image">
+                                </figure>
+                            </div>
+                            <!-- THUMBNAILS -->
+                            <div class="slider-nav-thumbnails pl-15 pr-15">
+                                <div><img th:src="@{/imgs/shop/thumbnail-3.jpg}" alt="product image"></div>
+                                <div><img th:src="@{/imgs/shop/thumbnail-4.jpg}" alt="product image"></div>
+                                <div><img th:src="@{/imgs/shop/thumbnail-5.jpg}" alt="product image"></div>
+                                <div><img th:src="@{/imgs/shop/thumbnail-6.jpg}" alt="product image"></div>
+                                <div><img th:src="@{/imgs/shop/thumbnail-7.jpg}" alt="product image"></div>
+                                <div><img th:src="@{/imgs/shop/thumbnail-8.jpg}" alt="product image"></div>
+                                <div><img th:src="@{/imgs/shop/thumbnail-9.jpg}" alt="product image"></div>
+                            </div>
+                        </div>
+                        <!-- End Gallery -->
+                        <div class="social-icons single-share">
+                            <ul class="text-grey-5 d-inline-block">
+                                <li><strong class="mr-10">Share this:</strong></li>
+                                <li class="social-facebook"><a href="#"><img th:src="@{/imgs/theme/icons/icon-facebook.svg}" alt=""></a></li>
+                                <li class="social-twitter"> <a href="#"><img th:src="@{/imgs/theme/icons/icon-twitter.svg}" alt=""></a></li>
+                                <li class="social-instagram"><a href="#"><img th:src="@{/imgs/theme/icons/icon-instagram.svg}" alt=""></a></li>
+                                <li class="social-linkedin"><a href="#"><img th:src="@{/imgs/theme/icons/icon-pinterest.svg}" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="detail-info" >
+                            <h3 class="title-detail mt-30">Colorful Pattern Shirts HD450</h3>
+                            <div class="product-detail-rating">
+                                <div class="pro-details-brand">
+                                    <span> Brands: <a href="shop-grid-right.html">Bootstrap</a></span>
+                                </div>
+                                <div class="product-rate-cover text-end">
+                                    <div class="product-rate d-inline-block">
+                                        <div class="product-rating" style="width:90%">
+                                        </div>
+                                    </div>
+                                    <span class="font-small ml-5 text-muted"> (25 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="clearfix product-price-cover">
+                                <div class="product-price primary-color float-left">
+                                    <ins><span class="text-brand">$120.00</span></ins>
+                                    <ins><span class="old-price font-md ml-15">$200.00</span></ins>
+                                    <span class="save-price  font-md color3 ml-15">25% Off</span>
+                                </div>
+                            </div>
+                            <div class="bt-1 border-color-1 mt-15 mb-15"></div>
+                            <div class="short-desc mb-30">
+                                <p class="font-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi,!</p>
+                            </div>
+
+                            <div class="attr-detail attr-color mb-15">
+                                <strong class="mr-10">Color</strong>
+                                <ul class="list-filter color-filter">
+                                    <li><a href="#" data-color="Red"><span class="product-color-red"></span></a></li>
+                                    <li><a href="#" data-color="Yellow"><span class="product-color-yellow"></span></a></li>
+                                    <li class="active"><a href="#" data-color="White"><span class="product-color-white"></span></a></li>
+                                    <li><a href="#" data-color="Orange"><span class="product-color-orange"></span></a></li>
+                                    <li><a href="#" data-color="Cyan"><span class="product-color-cyan"></span></a></li>
+                                    <li><a href="#" data-color="Green"><span class="product-color-green"></span></a></li>
+                                    <li><a href="#" data-color="Purple"><span class="product-color-purple"></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="attr-detail attr-size">
+                                <strong class="mr-10">Size</strong>
+                                <ul class="list-filter size-filter font-small">
+                                    <li><a href="#">S</a></li>
+                                    <li class="active"><a href="#">M</a></li>
+                                    <li><a href="#">L</a></li>
+                                    <li><a href="#">XL</a></li>
+                                    <li><a href="#">XXL</a></li>
+                                </ul>
+                            </div>
+                            <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+                            <div class="detail-extralink">
+                                <div class="detail-qty border radius">
+                                    <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                                    <span class="qty-val">1</span>
+                                    <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                </div>
+                                <div class="product-extra-link2">
+                                    <button type="submit" class="button button-add-to-cart">Add to cart</button>
+                                    <a aria-label="Add To Wishlist" class="action-btn hover-up" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                    <a aria-label="Compare" class="action-btn hover-up" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <ul class="product-meta font-xs color-grey mt-50">
+                                <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
+                                <li class="mb-5">Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">Women</a>, <a href="#" rel="tag">Dress</a> </li>
+                                <li>Availability:<span class="in-stock text-success ml-5">8 Items In Stock</span></li>
+                            </ul>
+                        </div>
+                        <!-- Detail Info -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<header th:replace="~{fragment::maintop}"></header>
+<div th:replace="~{fragment::mobiletop}"></div>
+<main class="main">
+    <section class="home-slider position-relative pt-50">
+        <div class="hero-slider-1 dot-style-1 dot-style-1-position-1">
+            <div class="single-hero-slider single-animation-wrap">
+                <div class="container">
+                    <div class="row align-items-center slider-animated-1">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="hero-slider-content-2">
+                                <h4 class="animated">Trade-in offer</h4>
+                                <h2 class="animated fw-900">Supper value deals</h2>
+                                <h1 class="animated fw-900 text-brand">On all products</h1>
+                                <p class="animated">Save more with coupons & up to 70% off</p>
+                                <a class="animated btn btn-brush btn-brush-3" href="shop-product-right.html"> Shop Now </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <div class="single-slider-img single-slider-img-1">
+                                <img class="animated slider-1-1" th:src="@{/imgs/shop/kids-banner.png}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-slider single-animation-wrap">
+                <div class="container">
+                    <div class="row align-items-center slider-animated-1">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="hero-slider-content-2">
+                                <h4 class="animated">Hot promotions</h4>
+                                <h2 class="animated fw-900">Fashion Trending</h2>
+                                <h1 class="animated fw-900 text-7">Great Collection</h1>
+                                <p class="animated">Save more with coupons & up to 20% off</p>
+                                <a class="animated btn btn-brush btn-brush-2" href="shop-product-right.html"> Discover Now </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <div class="single-slider-img single-slider-img-1">
+                                <img class="animated slider-1-2" th:src="@{/imgs/shop/kids-banner_two.png}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-slider single-animation-wrap">
+                <div class="container">
+                    <div class="row align-items-center slider-animated-1">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="hero-slider-content-2">
+                                <h4 class="animated">Upcoming Offer</h4>
+                                <h2 class="animated fw-900">Big Deals From</h2>
+                                <h1 class="animated fw-900 text-8">Manufacturer</h1>
+                                <p class="animated">Clothing, Shoes, Bags, Wallets...</p>
+                                <a class="animated btn btn-brush btn-brush-1" href="shop-product-right.html"> Shop Now </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <div class="single-slider-img single-slider-img-1">
+                                <img class="animated slider-1-3" th:src="@{/imgs/shop/kids-banner_three.png.}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-arrow hero-slider-1-arrow"></div>
+    </section>
+    <section class="featured section-padding position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img th:src="@{/imgs/theme/icons/feature-1.png}" alt="">
+                        <h4 class="bg-1">Free Shipping</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img th:src="@{/imgs/theme/icons/feature-2.png}" alt="">
+                        <h4 class="bg-3">Online Order</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img th:src="@{/imgs/theme/icons/feature-3.png}" alt="">
+                        <h4 class="bg-2">Save Money</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img th:src="@{/imgs/theme/icons/feature-4.png}" alt="">
+                        <h4 class="bg-4">Promotions</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img th:src="@{/imgs/theme/icons/feature-5.png}" alt="">
+                        <h4 class="bg-5">Happy Sell</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img th:src="@{/imgs/theme/icons/feature-6.png}" alt="">
+                        <h4 class="bg-6">24/7 Support</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product-tabs section-padding position-relative wow fadeIn animated">
+        <div class="bg-square"></div>
+
+        <div class="container">
+            <div class="tab-header mb-50">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">Featured</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-tab-two" data-bs-toggle="tab" data-bs-target="#tab-two" type="button" role="tab" aria-controls="tab-two" aria-selected="false">Popular</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">New added</button>
+                    </li>
+                </ul>
+                <a href="#" class="view-more d-none d-md-flex">View More<i class="fi-rs-angle-double-small-right"></i></a>
+            </div>
+            <!--End nav-tabs-->
+            <div class="tab-content wow fadeIn animated" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
+                    <div class="row product-grid-4">
+                        <div class="col-lg-3 col-md-4 col-12 col-sm-6" th:each="product : ${products}">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap d-flex">
+                                    <div class="product-img product-img-zoom" style="overflow: hidden">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                            <img class="hover-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                        </a>
+                                    </div>
+                                    <div class="product-action-1">
+                                        <a aria-label="Add To Wishlist" class="action-btn wish-btn hover-up" th:href="@{/add-wishlist}" th:data-product-id="${product.id}"><i class="fi-rs-heart"></i></a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="shop-grid-right.html" th:text="${product.category.name}">Clothing</a>
+                                    </div>
+                                    <h2><a href="shop-product-right.html" th:text="${product.name}"></a></h2>
+                                    <div class="rating-result" title="90%">
+                                            <span>
+                                                <span>90%</span>
+                                            </span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span th:unless="${product.salePrice > 0}">₹[(${product.costPrice})]</span>
+                                        <span th:if="${product.salePrice > 0}">₹[(${product.salePrice})]</span>
+                                        <span th:if="${product.salePrice > 0}" class="old-price">₹[(${product.costPrice})]</span>
+                                    </div>
+                                    <form th:action="@{/add-to-cart}" method="post" th:id="'form_' + ${product.id}">
+                                        <input type="hidden" name="productId" th:value="${product.id}" />
+                                        <div class="product-action-1 show">
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" th:data-product-id="${product.id}" onclick="submitForm(this.getAttribute('data-product-id')); return false;"><i class="fi-rs-shopping-bag-add"></i></a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End product-grid-4-->
+                    </div>
+                </div>
+
+                <!--En tab one (Featured)-->
+            <div class="tab-pane fade" id="tab-two" role="tabpanel" aria-labelledby="tab-two">
+                <div class="row product-grid-4">
+                    <div class="col-lg-3 col-md-4 col-12 col-sm-6" th:each="product : ${products}">
+                        <div class="product-cart-wrap mb-30">
+                            <div class="product-img-action-wrap">
+                                <div class="product-img product-img-zoom">
+                                    <a th:href="@{/product-full/{id}(id = ${product.id})}">
+                                        <img class="default-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                        <img class="hover-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                    </a>
+                                </div>
+                                <div class="product-action-1">
+                                    <a aria-label="Add To Wishlist" class="action-btn wish-btn hover-up" th:href="@{/add-wishlist}" th:data-product-id="${product.id}"><i class="fi-rs-heart"></i></a>
+                                </div>
+                                <div class="product-badges product-badges-position product-badges-mrg">
+                                    <span class="hot">Hot</span>
+                                </div>
+                            </div>
+                            <div class="product-content-wrap">
+                                <div class="product-category">
+                                    <a  th:text = "${product.category.name}"></a>
+                                </div>
+                                <h2><a th:href="@{/product-full/{id}(id = ${product.id})}" th:text = "${product.name}"></a></h2>
+                                <div class="rating-result" title="90%">
+                                            <span>
+                                                <span>90%</span>
+                                            </span>
+                                </div>
+                                <div class="product-price">
+                                    <span th:unless="${product.salePrice > 0}">₹[(${product.costPrice})]</span>
+                                    <span th:if="${product.salePrice > 0}">₹[(${product.salePrice})]</span>
+                                    <span th:if="${product.salePrice > 0}" class="old-price">₹[(${product.costPrice})]</span>
+                                </div>
+                                <form th:action="@{/add-to-cart}" method="post" th:id="'form_' + ${product.id}">
+                                    <input type="hidden" name="productId" th:value="${product.id}" />
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up" th:data-product-id="${product.id}" onclick="submitForm(this.getAttribute('data-product-id')); return false;"><i class="fi-rs-shopping-bag-add"></i></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--End product-grid-4-->
+                </div>
+            </div>
+            <!--En tab two (Popular)-->
+            <div class="tab-pane fade" id="tab-three" role="tabpanel" aria-labelledby="tab-three">
+                <div class="row product-grid-4">
+                    <div class="col-lg-3 col-md-4 col-12 col-sm-6" th:each="product : ${products}">
+                        <div class="product-cart-wrap mb-30">
+                            <div class="product-img-action-wrap">
+                                <div class="product-img product-img-zoom">
+                                    <a th:href="@{/product-full/{id}(id = ${product.id})}">
+                                        <img class="default-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                        <img class="hover-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                    </a>
+                                </div>
+                                <div class="product-action-1">
+                                    <a aria-label="Add To Wishlist" class="action-btn wish-btn hover-up" th:href="@{/add-wishlist}" th:data-product-id="${product.id}"><i class="fi-rs-heart"></i></a>
+                                </div>
+                                <div class="product-badges product-badges-position product-badges-mrg">
+                                    <span class="hot">Hot</span>
+                                </div>
+                            </div>
+                            <div class="product-content-wrap">
+                                <div class="product-category">
+                                    <a  th:text = "${product.category.name}"></a>
+                                </div>
+                                <h2><a th:href="@{/product-detail/{id}(id = ${product.id})}" th:text = "${product.name}"></a></h2>
+                                <div class="rating-result" title="90%">
+                                            <span>
+                                                <span>90%</span>
+                                            </span>
+                                </div>
+                                <div class="product-price">
+                                    <span th:unless="${product.salePrice > 0}">₹[(${product.costPrice})]</span>
+                                    <span th:if="${product.salePrice > 0}">₹[(${product.salePrice})]</span>
+                                    <span th:if="${product.salePrice > 0}" class="old-price">₹[(${product.costPrice})]</span>
+                                </div>
+                                <form th:action="@{/add-to-cart}" method="post" th:id="'form_' + ${product.id}">
+                                    <input type="hidden" name="productId" th:value="${product.id}" />
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up" th:data-product-id="${product.id}" onclick="submitForm(this.getAttribute('data-product-id')); return false;"><i class="fi-rs-shopping-bag-add"></i></a>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End product-grid-4-->
+            </div>
+            <!--En tab three (New added)-->
+        </div>
+        <!--End tab-content-->
+        </div>
+    </section>
+    <section class="popular-categories section-padding mt-15 mb-25">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                <div class="carausel-6-columns" id="carausel-6-columns">
+                    <div class="card-1" th:each="category : ${categories}">
+                        <h5><a th:href="@{/product-list(id=${category.id})}" th:text="${category.name}"></a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"></div>
+                <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
+                    <div class="product-cart-wrap small hover-up" th:each="product : ${products}">
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a th:href="@{/product-detail/{id}(id = ${product.id})}">
+                                    <img class="default-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                    <img class="hover-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
+                                </a>
+                            </div>
+                            <div class="product-action-1">
+                                <a aria-label="Add To Wishlist" class="action-btn wish-btn hover-up" th:href="@{/add-wishlist}" th:data-product-id="${product.id}"><i class="fi-rs-heart"></i></a>
+                            </div>
+                            <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="hot">Hot</span>
+                            </div>
+                        </div>
+                        <div class="product-content-wrap">
+                            <h2><a th:href="@{/product-detail/{id}(id = ${product.id})}" th:text = "${product.name}"></a></h2>
+                            <div class="rating-result" title="90%">
+                                    <span>
+                                    </span>
+                            </div>
+                            <div class="product-price">
+                                <span th:unless="${product.salePrice > 0}">₹[(${product.costPrice})]</span>
+                                <span th:if="${product.salePrice > 0}">₹[(${product.salePrice})]</span>
+                                <span th:if="${product.salePrice > 0}" class="old-price">₹[(${product.costPrice})]</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-45">
+        <div class="container">
+            <div class="row">
+                <div class="position-relative">
+                    <div class="hero-slider-1 style-3 dot-style-1 dot-style-1-position-1">
+                        <div class="single-hero-slider single-animation-wrap" th:if="${banner.enabled==true}" th:each="banner : ${banners}">
+                            <div class="container">
+                                <div class="slider-1-height-3 slider-animated-1">
+                                    <div class="hero-slider-content-2">
+                                        <h4 class="animated" th:text="${banner.name}"></h4>
+                                        <h2 class="animated fw-900"  th:text="${banner.description_1}"></h2>
+                                        <h1 class="animated fw-900 text-brand" th:text="${banner.description_2}"></h1>
+                                        <p class="animated" th:text="${banner.description_3}"></p>
+                                        <a class="animated btn btn-brush btn-brush-3"th:href="@{/product-full/{id}(id = ${banner.product.id})}"> Shop Now </a>
+                                    </div>
+                                    <div class="slider-img">
+                                        <img style="width: 100%" th:src="@{|/imgs/image-banner/${banner.bannerFile}|}" alt="BannerImage">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-arrow hero-slider-1-arrow style-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+    <footer class="main">
+        <section class="newsletter p-30 text-white wow fadeIn animated">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-md-3 mb-lg-0">
+                        <div class="row align-items-center">
+                            <div class="col flex-horizontal-center">
+                                <img class="icon-email" src="/imgs/theme/icons/icon-email.svg" alt="">
+                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
+                            </div>
+                            <div class="col my-4 my-md-0 des">
+                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first shopping.</strong></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- Subscribe Form -->
+                        <form class="form-subcriber d-flex wow fadeIn animated">
+                            <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
+                            <button class="btn bg-dark text-white" type="submit">Subscribe</button>
+                        </form>
+                        <!-- End Subscribe Form -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding footer-mid">
+            <div class="container pt-15 pb-20">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-about font-md mb-md-5 mb-lg-0">
+                            <div class="logo logo-width-1 wow fadeIn animated">
+                                <a th:href="@{/}"><img src="/imgs/theme/logo.png" alt="logo"></a>
+                            </div>
+                            <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
+                            <p class="wow fadeIn animated">
+                                <strong>Address: </strong>562 Wellington Road, Street 32, San Francisco
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Phone: </strong>+01 2222 365 /(+91) 01 2345 6789
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
+                            </p>
+                            <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                                <a href="#"><img src="/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="#"><img src="/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="#"><img src="/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="#"><img src="/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                                <a href="#"><img src="/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">About</h5>
+                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                            <li><a th:href="@{/about}">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a th:href="@{/contact}">Contact Us</a></li>
+                            <li><a th:href="@{/contact}">Support Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
+                        <ul class="footer-list wow fadeIn animated">
+                            <li><a th:href="@{/cart}">View Cart</a></li>
+                            <li><a th:href="@{/wishlist}">My Wishlist</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="widget-title wow fadeIn animated">Install App</h5>
+                        <div class="row">
+                            <div class="col-md-8 col-lg-12">
+                                <p class="wow fadeIn animated">From App Store or Google Play</p>
+                                <div class="download-app wow fadeIn animated">
+                                    <a href="#" class="hover-up mb-sm-4 mb-lg-0"><img class="active" src="/imgs/theme/app-store.jpg" alt=""></a>
+                                    <a href="#" class="hover-up"><img src="/imgs/theme/google-play.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
+                                <p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
+                                <img class="wow fadeIn animated" src="/imgs/theme/payment-method.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container pb-20 wow fadeIn animated">
+            <div class="row">
+                <div class="col-12 mb-20">
+                    <div class="footer-bottom"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2023, <strong class="text-brand">Mangolia Trendz</strong> - Mens Clothing Brand </p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-lg-end text-start font-sm text-muted mb-0">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        function submitForm(productId) {
+            console.log("clicked")
+            console.log(productId)
+
+
+            const formId = 'form_' + productId;
+            const form = document.getElementById(formId); // Replace "myForm" with your form's actual ID
+            form.submit(); // Submit the form
+        }
+
+        $(document).ready(function () {
+            $(".wish-btn").click(function (event) {
+                event.preventDefault();
+
+                const productId = $(this).data("product-id");
+
+                console.log(productId);
+                $.ajax({
+                    url: "shop/add-wishlist",
+                    type: "POST",
+                    data: { productId: productId },
+                    success: function (response) {
+                        alert("Added to wishlist successfully");
+                    },
+                    error: function (xhr, status, error) {
+
+                        if (xhr.status === 409) {
+                            alert("Product already exists in wishlist");
+                        }else if(xhr.status === 401){
+                            alert("User not logged in , Please Log in")
+                        } else {
+                            alert("Error adding to wishlist. Please try again later.");
+                        }
+                    },
+                });
+            });
+        });
+
+
+    </script>
+    <script th:src="@{/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script th:src="@{/js/vendor/jquery-3.6.0.min.js}"></script>
+    <script th:src="@{/js/vendor/jquery-migrate-3.3.0.min.js}"></script>
+    <script th:src="@{/js/vendor/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/plugins/slick.js}"></script>
+    <script th:src="@{/js/plugins/jquery.syotimer.min.js}"></script>
+    <script th:src="@{/js/plugins/wow.js}"></script>
+    <script th:src="@{/js/plugins/jquery-ui.js}"></script>
+    <script th:src="@{/js/plugins/perfect-scrollbar.js}"></script>
+    <script th:src="@{/js/plugins/magnific-popup.js}"></script>
+    <script th:src="@{/js/plugins/select2.min.js}"></script>
+    <script th:src="@{/js/plugins/waypoints.js}"></script>
+    <script th:src="@{/js/plugins/counterup.js}"></script>
+    <script th:src="@{/js/plugins/jquery.countdown.min.js}"></script>
+    <script th:src="@{/js/plugins/images-loaded.js}"></script>
+    <script th:src="@{/js/plugins/isotope.js}"></script>
+    <script th:src="@{/js/plugins/scrollup.js}"></script>
+    <script th:src="@{/js/plugins/jquery.vticker-min.js}"></script>
+    <script th:src="@{/js/plugins/jquery.theia.sticky.js}"></script>
+    <script th:src="@{/js/plugins/jquery.elevatezoom.js}"></script>
+    <!-- Template  JS -->
+    <script src="./js/main.js?v=3.4"></script>
+    <script src="./js/shop.js?v=3.4"></script>
+</main>
+</body>
+
+</html>

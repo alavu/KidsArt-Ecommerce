@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragment::head}"></head>
+<body>
+<header th:replace="~{fragment::maintop}"></header>
+
+<div th:replace="~{fragment::mobiletop}"></div>
+
+
+<div class="container">
+
+    <section class="content-main">
+        <div class="content-header">
+            <div>
+                <h2 class="content-title card-title">Order Tracking</h2>
+                <p th:text="'Details for Order ID:' +${order.id}"></p>
+            </div>
+        </div>
+        <div class="card">
+            <header class="card-header">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 mb-lg-0 mb-15">
+                        <span>
+                            <i class="material-icons md-calendar_today"></i> <b th:text="${time}"></b>
+                        </span> <br>
+                        <small class="text-muted" th:text="'Order ID: ' + ${order.id}"></small> <br>
+                        <small class="text-muted" th:text="'Your order has been ' + ${order.orderStatus}"></small>
+                    </div>
+
+                </div>
+            </header> <!-- card-header end// -->
+            <div th:if="${order.orderStatus=='Cancelled' or order.orderStatus=='Returned'}">
+
+                <h2 th:text="${order.orderStatus}"></h2>
+
+            </div>
+
+            <div th:unless="${order.orderStatus=='Cancelled' or order.orderStatus=='Returned'}" class="card-body">
+                <div class="order-tracking mb-100">
+                    <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between">
+                        <div th:classappend="${pending==1 ?'completed':''}" class="step">
+                            <div class="step-icon-wrap">
+                                <div class="step-icon"><i class="material-icons md-settings"></i></div>
+                            </div>
+                            <h4 class="step-title">Processing Order</h4>
+                            <small class="text-muted text-sm">[(${order.orderDate})]</small>
+                        </div>
+                        <div th:classappend="${confirmed==2 ?'completed':''}" class="step">
+                            <div class="step-icon-wrap">
+                                <div class="step-icon"><i class="material-icons md-shopping_cart"></i></div>
+                            </div>
+                            <h4 class="step-title">Confirmed Order</h4>
+                            <small class="text-muted text-sm">[(${order.orderDate})]</small>
+                        </div>
+                        <div th:classappend="${shipped==3 ?'completed':''}" class="step">
+                            <div class="step-icon-wrap">
+                                <div class="step-icon"><i class="material-icons md-local_shipping"></i></div>
+                            </div>
+                            <h4 class="step-title">Product Dispatched</h4>
+                        </div>
+                        <div th:classappend="${delivered==4 ?'completed':''}" class="step">
+                            <div class="step-icon-wrap">
+                                <div class="step-icon"><i class="material-icons md-check_circle"></i></div>
+                            </div>
+                            <h4 class="step-title">Product Delivered</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-50 mt-20 order-info-wrap text-center">
+                    <div class="col-md-4">
+                        <article class="icontext align-items-start">
+                            <div class="text">
+                                <h6 class="mb-1">Customer</h6>
+                                <p class="mb-1">
+                                    <span th:text="${order.customer.firstName}"></span> <br>
+                                    <span th:text="${order.customer.username}"></span> <br>
+                                    <span th:text="${order.customer.phoneNumber}"></span>
+                                </p>
+
+                                <a th:href="@{/profile}">View profile</a>
+                            </div>
+                        </article>
+                    </div> <!-- col// -->
+                    <div class="col-md-4">
+                        <article class="icontext align-items-start">
+                            <div class="text">
+                                <h6 class="mb-1">Order info</h6>
+                                <p class="mb-1">
+                                    Shipping: Fargo express <br> Pay method: [(${order.paymentMethod})] <br>
+                                </p>
+                            </div>
+                        </article>
+                    </div> <!-- col// -->
+                    <div class="col-md-4">
+                        <article class="icontext align-items-start">
+                            <div class="text">
+                                <h6 class="mb-1">Deliver to</h6>
+                                <p class="mb-1">
+                                    Address: [(${order.shippingAddress.address_line_1})] <br>[(${order.shippingAddress.address_line_2})]<br> [(${order.shippingAddress.city})] <br>
+                                    [(${order.shippingAddress.country})] <br> [(${order.shippingAddress.pincode})]
+                                </p>
+                                <a th:href="@{/profile}">View profile</a>
+                            </div>
+                        </article>
+                    </div> <!-- col// -->
+                </div> <!-- row // -->
+                <div class="row">
+                    <div class="text-center mt-100 mb-50">
+                        <a class="btn btn-primary" th:href="@{/order-view/{id}(id=${order.id})}">View Order Details</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- card end// -->
+    </section> <!-- content-main end// -->
+</div>
+<footer th:replace="~{fragment::downbar}"></footer>
+<div th:replace = "~{fragment::script}"></div>
+<div th:replace = "~{fragment::script}"></div>
+</body>
+</html>
