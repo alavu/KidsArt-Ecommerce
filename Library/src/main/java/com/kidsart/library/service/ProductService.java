@@ -62,9 +62,9 @@ public interface ProductService {
 
     Long countAllProducts();
 
-    List<Object[]> getProductStats();
-
-    List<Object[]> getProductsStatsBetweenDates(Date startDate, Date endDate);
+//    List<Object[]> getProductStats();
+//
+//    List<Object[]> getProductsStatsBetweenDates(Date startDate, Date endDate);
 
 
 }
