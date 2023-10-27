@@ -37,30 +37,30 @@
                             borderColor: 'rgb(100, 209, 130)',
                             data: revenueData
                         },
-                        {
-                            label: 'Total Revenue In Each Year',
-                            tension: 0.3,
-                            fill: true,
-                            backgroundColor: 'rgba(100, 209, 130, 0.2)',
-                            borderColor: 'rgb(100, 209, 130)',
-                            data: revenueData
-                        },
-                        {
-                            label: 'Total Revenue In Each Week',
-                            tension: 0.3,
-                            fill: true,
-                            backgroundColor: 'rgba(100, 209, 130, 0.2)',
-                            borderColor: 'rgb(100, 209, 130)',
-                            data: revenueData
-                        },
-                        {
-                            label: 'Total Revenue In Each Day',
-                            tension: 0.3,
-                            fill: true,
-                            backgroundColor: 'rgba(100, 209, 130, 0.2)',
-                            borderColor: 'rgb(100, 209, 130)',
-                            data: revenueData
-                        },
+                        // {
+                        //     label: 'Total Revenue In Each Year',
+                        //     tension: 0.3,
+                        //     fill: true,
+                        //     backgroundColor: 'rgba(100, 209, 130, 0.2)',
+                        //     borderColor: 'rgb(100, 209, 130)',
+                        //     data: revenueData
+                        // },
+                        // {
+                        //     label: 'Total Revenue In Each Week',
+                        //     tension: 0.3,
+                        //     fill: true,
+                        //     backgroundColor: 'rgba(100, 209, 130, 0.2)',
+                        //     borderColor: 'rgb(100, 209, 130)',
+                        //     data: revenueData
+                        // },
+                        // {
+                        //     label: 'Total Revenue In Each Day',
+                        //     tension: 0.3,
+                        //     fill: true,
+                        //     backgroundColor: 'rgba(100, 209, 130, 0.2)',
+                        //     borderColor: 'rgb(100, 209, 130)',
+                        //     data: revenueData
+                        // },
                     ]
                 },
                 options: {

@@ -45,7 +45,7 @@
                                         <p class="font-xs" th:text="${cartItem.product.description}"></p>
                                     </td>
                                     <td class="price" data-title="Price">
-                                        <span th:text="'$' + ${cartItem.unitPrice}"></span>
+                                        <span th:text="'₹' + ${cartItem.unitPrice}"></span>
                                     </td>
                                     <form th:action="@{/update-cart}" method="post">
                                         <input type = "hidden" name = "productId" th:value = "${cartItem.product.id}" >
@@ -55,7 +55,7 @@
                                                    class="c-input-text qty text">
                                         </td>
                                         <td class="total-pr">
-                                            <p th:text="'$' + ${cartItem.unitPrice * cartItem.quantity}"></p>
+                                            <p th:text="'₹' + ${cartItem.unitPrice * cartItem.quantity}"></p>
                                         </td>
                                         <td>
                                             <button type="submit" name="action" value="update" title="Update"
@@ -76,7 +76,7 @@
                             <a class="btn" th:href="@{/index}"><i class="fi-rs-shopping-bag mr-10" ></i> Continue Shopping</a>
                         </div>
                         <div class="divider center_icon mt-50 mb-50"><i class="fi-rs-fingerprint"></i></div>
-                        <div class="container">
+                        <div class="container" th:if="${shoppingCart != null}">
                             <div class="row justify-content-center">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="border p-md-4 p-30 border-radius cart-totals text-center">
