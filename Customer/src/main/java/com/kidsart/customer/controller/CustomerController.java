@@ -2,7 +2,6 @@ package com.kidsart.customer.controller;
 
 import com.kidsart.library.dto.AddressDto;
 import com.kidsart.library.dto.CustomerDto;
-import com.kidsart.library.dto.OrderDto;
 import com.kidsart.library.model.*;
 import com.kidsart.library.service.*;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +9,6 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,9 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequiredArgsConstructor
@@ -53,15 +49,15 @@ public class CustomerController {
                 model.addAttribute("title", "Dashboard");
                 model.addAttribute("addressDto",new AddressDto());
                 model.addAttribute("addressList",address);
-
-
                 return "customer-information";
             }
         }
+
     @GetMapping("/about")
     public String getAboutUs(){
         return "about";
     }
+
     @GetMapping("/contact")
     public String getContactUs(){
         return "contact";
@@ -106,7 +102,6 @@ public class CustomerController {
         return "redirect:" + request.getHeader("Referer");
     }
 
-
     @GetMapping("/update-address/{id}")
     public String getUpdateAddress(@PathVariable("id")Long address_Id,Model model,Principal principal){
         if(principal==null){
@@ -143,13 +138,6 @@ public class CustomerController {
         }
         return "redirect:/profile";
     }
-
-/*    @RequestMapping(value = "/find-customerAddress/{id}",method = {RequestMethod.GET})
-    @ResponseBody
-    public AddressDto findCustomerAddress(@PathVariable("id") Long id){
-
-        return addressService.findById(id);
-    }*/
 
     @GetMapping("/enable-address/{id}")
     public String enableAddress(@PathVariable("id")long address_id,

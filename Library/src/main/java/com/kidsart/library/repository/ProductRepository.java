@@ -63,7 +63,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query(value = "select count(*) from Product")
     Long CountAllProducts();
-/*
+
     @Query(value = "SELECT p.product_id, p.name, c.name, " +
             "SUM(od.quantity) AS total_quantity_ordered, SUM(od.quantity * p.cost_Price) AS total_revenue " +
             "FROM products p " +
@@ -86,7 +86,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             "GROUP BY p.product_id, p.name, c.name " +
             "ORDER BY total_revenue DESC",nativeQuery = true)
     List<Object[]> getProductsStatsForConfirmedOrdersBetweenDates(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
-*/
+
     @Query("SELECT p.name, p.currentQuantity FROM Product p WHERE p.is_deleted = false AND p.is_activated = true")
     List<Object[]> stockReport();
 }

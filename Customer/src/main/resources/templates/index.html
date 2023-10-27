@@ -137,7 +137,7 @@
                                 <h2 class="animated fw-900">Supper value deals</h2>
                                 <h1 class="animated fw-900 text-brand">On all products</h1>
                                 <p class="animated">Save more with coupons & up to 70% off</p>
-                                <a class="animated btn btn-brush btn-brush-3" href="shop-product-right.html"> Shop Now </a>
+                                <a class="animated btn btn-brush btn-brush-3" th:href="@{/product-list}"> Shop Now </a>
                             </div>
                         </div>
                         <div class="col-lg-7 col-md-6">
@@ -259,7 +259,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap d-flex">
                                     <div class="product-img product-img-zoom" style="overflow: hidden">
-                                        <a href="shop-product-right.html">
+                                        <a th:href="@{/product-detail/{id}(id = ${product.id})}">
                                             <img class="default-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
                                             <img class="hover-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
                                         </a>
@@ -275,7 +275,7 @@
                                     <div class="product-category">
                                         <a href="shop-grid-right.html" th:text="${product.category.name}">Clothing</a>
                                     </div>
-                                    <h2><a href="shop-product-right.html" th:text="${product.name}"></a></h2>
+                                    <h2><a th:href="@{/product-detail/{id}(id = ${product.id})}" th:text="${product.name}"></a></h2>
                                     <div class="rating-result" title="90%">
                                             <span>
                                                 <span>90%</span>
@@ -287,7 +287,7 @@
                                         <span th:if="${product.salePrice > 0}" class="old-price">₹[(${product.costPrice})]</span>
                                     </div>
                                     <form th:action="@{/add-to-cart}" method="post" th:id="'form_' + ${product.id}">
-                                        <input type="hidden" name="productId" th:value="${product.id}" />
+                                        <input type="hidden" name="id" th:value="${product.id}" />
                                         <div class="product-action-1 show">
                                             <a aria-label="Add To Cart" class="action-btn hover-up" th:data-product-id="${product.id}" onclick="submitForm(this.getAttribute('data-product-id')); return false;"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
@@ -306,7 +306,7 @@
                         <div class="product-cart-wrap mb-30">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
-                                    <a th:href="@{/product-full/{id}(id = ${product.id})}">
+                                    <a th:href="@{/product-detail/{id}(id = ${product.id})}">
                                         <img class="default-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
                                         <img class="hover-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
                                     </a>
@@ -322,7 +322,7 @@
                                 <div class="product-category">
                                     <a  th:text = "${product.category.name}"></a>
                                 </div>
-                                <h2><a th:href="@{/product-full/{id}(id = ${product.id})}" th:text = "${product.name}"></a></h2>
+                                <h2><a th:href="@{/product-detail/{id}(id = ${product.id})}" th:text = "${product.name}"></a></h2>
                                 <div class="rating-result" title="90%">
                                             <span>
                                                 <span>90%</span>
@@ -353,7 +353,7 @@
                         <div class="product-cart-wrap mb-30">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
-                                    <a th:href="@{/product-full/{id}(id = ${product.id})}">
+                                    <a th:href="@{/product-detail/{id}(id = ${product.id})}">
                                         <img class="default-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
                                         <img class="hover-img" th:src="'data:image/jpeg;base64,' + ${product.images[0].getName()}" alt="ProductImage">
                                     </a>
@@ -465,7 +465,7 @@
                                         <h2 class="animated fw-900"  th:text="${banner.description_1}"></h2>
                                         <h1 class="animated fw-900 text-brand" th:text="${banner.description_2}"></h1>
                                         <p class="animated" th:text="${banner.description_3}"></p>
-                                        <a class="animated btn btn-brush btn-brush-3"th:href="@{/product-full/{id}(id = ${banner.product.id})}"> Shop Now </a>
+                                        <a class="animated btn btn-brush btn-brush-3"th:href="@{/product-detail/{id}(id = ${banner.product.id})}"> Shop Now </a>
                                     </div>
                                     <div class="slider-img">
                                         <img style="width: 100%" th:src="@{|/imgs/image-banner/${banner.bannerFile}|}" alt="BannerImage">
@@ -577,7 +577,7 @@
                     <div class="footer-bottom"></div>
                 </div>
                 <div class="col-lg-6">
-                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2023, <strong class="text-brand">Mangolia Trendz</strong> - Mens Clothing Brand </p>
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2023, <strong class="text-brand">KidsArt </strong> - Kids Clothing Brand </p>
                 </div>
                 <div class="col-lg-6">
                     <p class="text-lg-end text-start font-sm text-muted mb-0">
@@ -594,7 +594,7 @@
 
 
             const formId = 'form_' + productId;
-            const form = document.getElementById(formId); // Replace "myForm" with your form's actual ID
+            const form = document.getElementById(formId); // Replace with your form's actual ID
             form.submit(); // Submit the form
         }
 
@@ -606,7 +606,7 @@
 
                 console.log(productId);
                 $.ajax({
-                    url: "shop/add-wishlist",
+                    url: "/add-wishlist",
                     type: "POST",
                     data: { productId: productId },
                     success: function (response) {

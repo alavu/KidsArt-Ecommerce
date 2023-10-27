@@ -46,19 +46,12 @@ public class WishListController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not logged in");
         }
 
-
-
         Customer customer = customerService.findByUsername(principal.getName());
-
         boolean exists = wishlistService.findByProductId(productId, customer);
-
-
         if (exists) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Product already exists in wishlist");
         }
-
         wishlistService.save(productId,customer);
-
         return ResponseEntity.status(HttpStatus.OK).body("Product added to wishlist successfully");
     }
 
@@ -66,11 +59,7 @@ public class WishListController {
     public String delete(@PathVariable("id")long wishlistId, RedirectAttributes redirectAttributes){
 
         wishlistService.deleteWishlist(wishlistId);
-
         redirectAttributes.addFlashAttribute("success","Removed Successfully");
-
         return "redirect:/wishlist";
     }
-
-
 }

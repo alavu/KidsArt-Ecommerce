@@ -70,6 +70,7 @@ public class ProductController {
         model.addAttribute("title", "Product Detail");
         model.addAttribute("page", "Product Detail");
         model.addAttribute("productDetail", product);
+        model.addAttribute("products", product);
         return "product-detail";
     }
 

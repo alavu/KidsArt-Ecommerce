@@ -31,7 +31,6 @@ public class ReportGenerator {
 
         // Generate the file path
         String filePath = uploadDir + fileName + ".pdf";
-
         Document document = new Document(PageSize.A1);
         try {
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
@@ -78,7 +77,6 @@ public class ReportGenerator {
 
         return filePath;
     }
-
 
     public String generateProductStatsCsv(List<Object[]> productStats) {
         // Generate a unique file name for the CSV file

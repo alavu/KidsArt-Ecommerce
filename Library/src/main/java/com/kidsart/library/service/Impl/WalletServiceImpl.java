@@ -18,7 +18,6 @@ import java.util.List;
 public class WalletServiceImpl implements WalletService {
 
     private WalletRepository walletRepository;
-
     private WalletHistoryRepository walletHistoryRepository;
 
     public WalletServiceImpl(WalletRepository walletRepository,

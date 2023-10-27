@@ -46,7 +46,7 @@ public class Dashboardontroller {
         this.categoryService = categoryService;
         this.reportGenerator = reportGenerator;
     }
-/*
+
     @GetMapping("/")
     public String getIndex(HttpSession session, Principal principal, Model model,
                            @RequestParam(name = "filter", required = false, defaultValue = "") String filter,
@@ -193,9 +193,8 @@ public class Dashboardontroller {
     @ResponseBody
     public Map<String,Object> getSalesData() {
         List<Long> salesData = orderService.findAllOrderCountForEachMonth();
-        List<Double> revenueData = orderService.getTotalAmountForEachMonth();*/
+        List<Double> revenueData = orderService.getTotalAmountForEachMonth();
         /*10/17/23*/
-    /*
         List<Object[]>productStats = productService.getProductStats();
         for (Object[] row : productStats) {
             if (row.length>4 && row[4] instanceof Double) {
@@ -204,15 +203,14 @@ public class Dashboardontroller {
             } else {
                 System.out.println("Invalid data for Total Revenue in the row.");
             }
-        }*/
-
-    /*
+        }
+        //-----------------   /*10/17/23*/
         Map<String,Object> responseData = new HashMap<>();
         responseData.put("salesData",salesData);
         responseData.put("revenueData",revenueData);
         responseData.put("totalRevenue", productStats);
         return responseData;
     }
-*/
+
 }
 

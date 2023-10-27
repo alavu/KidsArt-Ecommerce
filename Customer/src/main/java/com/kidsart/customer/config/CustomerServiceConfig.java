@@ -26,7 +26,6 @@ public UserDetails loadUserByUsername(String username) throws UsernameNotFoundEx
     if (customer == null) {
         throw new UsernameNotFoundException("Could not find username");
     }
-
     if (customer.is_blocked()) {
         throw new LockedException("User is blocked!");
     }
@@ -38,6 +37,4 @@ public UserDetails loadUserByUsername(String username) throws UsernameNotFoundEx
                     .map(role -> new SimpleGrantedAuthority(role.getName()))
                     .collect(Collectors.toList()));
 }
-
-
 }

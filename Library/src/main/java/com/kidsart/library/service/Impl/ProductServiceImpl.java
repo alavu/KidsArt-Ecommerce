@@ -110,8 +110,6 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-
-
     @Override
     public void enableById(Long id) {
         Product product = productRepository.getById(id);
@@ -273,7 +271,7 @@ public class ProductServiceImpl implements ProductService {
     public Long countAllProducts() {
         return productRepository.CountAllProducts();
     }
-/*
+
     @Override
     public List<Object[]> getProductStats() {
         return productRepository.getProductStatsForConfirmedOrders();
@@ -283,7 +281,7 @@ public class ProductServiceImpl implements ProductService {
     public List<Object[]> getProductsStatsBetweenDates(Date startDate, Date endDate) {
         return productRepository.getProductsStatsForConfirmedOrdersBetweenDates(startDate,endDate);
     }
-*/
+
     private Page toPage(List list, Pageable pageable) {
         if (pageable.getOffset() >= list.size()) {
             return Page.empty();

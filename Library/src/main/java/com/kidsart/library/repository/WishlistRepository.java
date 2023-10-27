@@ -12,10 +12,12 @@ import java.util.List;
 public interface WishlistRepository extends JpaRepository<Wishlist,Long> {
 
     List<Wishlist> findAllByCustomerId(long id);
+//    @Query("select exists (select w FROM Wishlist w WHERE w.product.id = :productId AND w.product.id=:productId)")
+//    boolean findByProductIdAndCustomerId(@Param("productId") long productId,@Param("customerId") long customerId);
 
-    @Query(value = "SELECT EXISTS (SELECT FROM wishlist WHERE customer_id = :customerId AND product_id=:productId)",nativeQuery = true)
+    @Query("SELECT CASE WHEN COUNT(w) > 0 THEN true ELSE false END FROM Wishlist w WHERE w.product.id = :productId AND w.customer.id = :customerId")
     boolean findByProductIdAndCustomerId(@Param("productId") long productId,@Param("customerId") long customerId);
-
     Wishlist findById(long id);
+
 
 }

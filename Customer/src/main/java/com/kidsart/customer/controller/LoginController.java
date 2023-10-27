@@ -22,7 +22,6 @@ public class LoginController {
     private final BCryptPasswordEncoder passwordEncoder;
     private final SmsService smsService;
 
-
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, HttpSession session) {
         Object attribute = session.getAttribute("userLoggedIn");
@@ -115,9 +114,9 @@ public class LoginController {
             redirectAttributes.addFlashAttribute("error", e.getMessage());
             return "redirect:/forgot-password";
         }
-
         return "redirect:/forgot-password";
     }
+
     @PostMapping("/verify-inputotp")
     public String VerifyOtpPassword(@RequestParam("inputedOtp")String inputOtp,
                                     RedirectAttributes redirectAttributes,
@@ -145,5 +144,4 @@ public class LoginController {
         session.removeAttribute("customerDto");
         return "redirect:/login";
     }
-
 }

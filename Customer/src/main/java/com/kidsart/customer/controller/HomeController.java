@@ -33,10 +33,10 @@ public class HomeController {
 
     @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public String home(Model model, Principal principal, HttpSession session) {
-//        if (principal == null) {
-//            return "redirect:/login";
-//        } else {
-
+        /*  if (principal == null) {
+            return "redirect:/login";
+        } else {
+        */
             List<BannerDto> bannerDtoList=bannerService.getAllBanners();
             List<Category> categories = categoryService.findAllByActivatedTrue();
             if (principal != null) {
@@ -50,7 +50,6 @@ public class HomeController {
             model.addAttribute("categories",categories);
             model.addAttribute("banners",bannerDtoList);
             model.addAttribute("products", products);
-
-        return "index";
+            return "index";
     }
 }

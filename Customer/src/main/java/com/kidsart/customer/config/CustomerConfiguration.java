@@ -33,7 +33,6 @@ public class CustomerConfiguration {
         return new CustomerServiceConfig(customerRepository);
     }
 
-
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -46,7 +45,6 @@ public class CustomerConfiguration {
         provider.setPasswordEncoder(passwordEncoder());
         return provider;
     }
-
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {

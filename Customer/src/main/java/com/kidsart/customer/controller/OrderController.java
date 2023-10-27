@@ -66,7 +66,6 @@ public class OrderController {
         }
     }
 
-
     @RequestMapping(value = "/check-out/apply-coupon", method = RequestMethod.POST, params = "action=apply")
     public String applyCoupon(@RequestParam("couponCode") String couponCode, Principal principal,
                               RedirectAttributes attributes, HttpSession session) {

@@ -13,7 +13,6 @@ import java.util.List;
 public class CustomerDetails implements UserDetails {
     private Customer customer;
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
