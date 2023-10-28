@@ -124,7 +124,7 @@ public class InvoiceService {
 
         Font fontTitle= FontFactory.getFont(FontFactory.HELVETICA_BOLD,25);
 
-        Paragraph titlePara=new Paragraph("Monthly cancel report",fontTitle);
+        Paragraph titlePara = new Paragraph("Monthly cancel report",fontTitle);
         titlePara.setAlignment(Element.ALIGN_CENTER);
         document.add(titlePara);
 
@@ -137,7 +137,7 @@ public class InvoiceService {
 
             Paragraph reportPara = new Paragraph();
             reportPara.add(new Paragraph("Month: " + month));
-            reportPara.add(new Paragraph("Cancel Count: " + count));
+            reportPara.add(new Paragraph("Cancel Count: " + counts));
             reportPara.add(new Paragraph("Customer ID: " + customerId));
 
             document.add(reportPara);
