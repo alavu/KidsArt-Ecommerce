@@ -128,22 +128,28 @@ public class InvoiceService {
         titlePara.setAlignment(Element.ALIGN_CENTER);
         document.add(titlePara);
 
-        for (MonthlyCancelReportDTO entry : cancelReport) {
-            String month = entry.getMonth();
-            long count = entry.getCancelCount();
-            String counts= String.valueOf(count);
-            int customerId = entry.getCustomerId();
+        if (cancelReport.isEmpty()) {
+            Paragraph noDataPara = new Paragraph("No canceled reports for this month");
+            document.add(noDataPara);
+        } else {
+
+            for (MonthlyCancelReportDTO entry : cancelReport) {
+                String month = entry.getMonth();
+                long count = entry.getCancelCount();
+                String counts = String.valueOf(count);
+                int customerId = entry.getCustomerId();
 
 
-            Paragraph reportPara = new Paragraph();
-            reportPara.add(new Paragraph("Month: " + month));
-            reportPara.add(new Paragraph("Cancel Count: " + counts));
-            reportPara.add(new Paragraph("Customer ID: " + customerId));
+                Paragraph reportPara = new Paragraph();
+                reportPara.add(new Paragraph("Month: " + month));
+                reportPara.add(new Paragraph("Cancel Count: " + counts));
+                reportPara.add(new Paragraph("Customer ID: " + customerId));
 
-            document.add(reportPara);
+                document.add(reportPara);
 
-            Paragraph spacingPara = new Paragraph("\n");
-            document.add(spacingPara);
+                Paragraph spacingPara = new Paragraph("\n");
+                document.add(spacingPara);
+            }
         }
         document.close();
         return new ByteArrayInputStream(out.toByteArray());
